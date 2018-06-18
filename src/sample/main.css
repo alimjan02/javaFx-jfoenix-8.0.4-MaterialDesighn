@@ -1,0 +1,93 @@
+
+.root {
+     -fx-background-image: url("bg.png");
+}
+/*
+.label{
+    -fx-text-fill: #ff8c00;
+}*/
+
+
+
+.jfx-hamburger-icon{
+    -fx-spacing: 5;
+    -fx-cursor: hand;
+}
+.jfx-hamburger-icon StackPane{
+    -fx-pref-width: 40px;
+    -fx-pref-height: 7px;
+    -fx-background-color : #D63333;
+    -fx-background-radius : 5px;
+}
+
+#-title {
+    -fx-font-color: red;
+    -fx-font-size: 20px;
+    -fx-font-weight: bolder;
+}
+
+/*Flat button example*/
+.jfx-button {
+     -jfx-button-type: FLAT;
+     -fx-background-color: #039BE5;
+     -fx-text-fill: black;
+}
+
+/*Raised button example*/
+.jfx-button {
+     -jfx-button-type: RAISED;
+     -fx-background-color: #039BE5;
+     -fx-text-fill: white;
+     -jfx-disable-visual-focus: true;
+}
+
+.jfx-toggle-button {
+     -jfx-toggle-color: #009688;
+     -jfx-untoggle-color: #FAFAFA;
+     -jfx-toggle-line-color: #77C2BB;
+     -jfx-untoggle-line-color: #999999;
+     -jfx-size: 10.0;
+     -jfx-disable-visual-focus: false;
+}
+
+.jfx-combo-box{
+    -jfx-focus-color: #039BE5;
+
+}
+
+.mylistview .scroll-bar:horizontal .track,
+.mylistview .scroll-bar:vertical .track{
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius:2em;
+}
+
+.mylistview .scroll-bar:horizontal .increment-button ,
+.mylistview .scroll-bar:horizontal .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 0 10 0;
+}
+
+.mylistview .scroll-bar:vertical .increment-button ,
+.mylistview .scroll-bar:vertical .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 10 0 0;
+}
+.mylistview  .scroll-bar .increment-arrow,
+.mylistview  .scroll-bar .decrement-arrow{
+    -fx-shape:" ";
+    -fx-padding:0;
+}
+
+.mylistview .scroll-bar:horizontal .thumb,
+.mylistview .scroll-bar:vertical .thumb {
+    -fx-background-color:derive(black,90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+
+

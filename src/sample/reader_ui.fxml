@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="498.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ReaderUi">
+   <Label layoutX="314.0" layoutY="36.0" text="读者界面" textFill="GOLD">
+      <font>
+         <Font name="System Bold Italic" size="18.0" />
+      </font>
+   </Label>
+
+   <JFXTabPane layoutX="14.0" layoutY="88.0" prefHeight="385.0" prefWidth="669.0" tabClosingPolicy="UNAVAILABLE">
+      <Tab text="查询">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="577.0">
+            <JFXButton fx:id="btn_search_confirmBook" layoutX="553.0" layoutY="235.0" mnemonicParsing="false" onAction="#tf_search_book" text="确认图书" />
+            <JFXTextField fx:id="tf_reader_search" alignment="CENTER" focusColor="DEEPSKYBLUE" layoutX="58.0" layoutY="39.0" prefHeight="23.0" prefWidth="481.0" promptText="搜索书名/作者/出版社" style="-fx-background-color: #808080;" />
+            <JFXButton fx:id="btn_search" layoutX="549.0" layoutY="39.0" mnemonicParsing="false" onAction="#tf_reader_search" prefHeight="23.0" prefWidth="72.0" text="搜索" />
+            <TableView fx:id="tbv_search_Result" layoutX="23.0" layoutY="93.0" prefHeight="124.0" prefWidth="624.0">
+               <columns>
+                  <TableColumn fx:id="tb_column_book_id" prefWidth="63.99998474121094" text="图书ID" />
+                  <TableColumn fx:id="tb_column_book_name" prefWidth="100.0" text="图书名称" />
+                  <TableColumn fx:id="tb_column_book_type" prefWidth="78.0" text="图书类别" />
+                  <TableColumn fx:id="tb_column_book_author" prefWidth="55.0" text="作者" />
+                  <TableColumn fx:id="tb_column_book_translator" prefWidth="62.0" text="译者" />
+                  <TableColumn fx:id="tb_column_book_publisher" prefWidth="98.0" text="出版社" />
+                  <TableColumn fx:id="tb_column_book_publishTime" prefWidth="95.0" text="出版时间" />
+                  <TableColumn fx:id="tb_column_book_price" prefWidth="69.0" text="价格" />
+               </columns>
+            </TableView>
+            <Label layoutX="77.0" layoutY="237.0" text="图书ID" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tf_search_bookId" focusColor="DEEPSKYBLUE" layoutX="134.0" layoutY="235.0" prefHeight="23.0" prefWidth="185.0" style="-fx-background-color: #F5F5F5;" />
+            <JFXTextField fx:id="tf_search_bookName" editable="false" focusColor="DEEPSKYBLUE" layoutX="391.0" layoutY="235.0" style="-fx-background-color: #F5F5F5;" />
+            <Label layoutX="335.0" layoutY="239.0" text="图书名称" textFill="WHITE" />
+            <JFXButton fx:id="btn_search_confirmBorrow" layoutX="549.0" layoutY="292.0" mnemonicParsing="false" onAction="#borrow_book" prefHeight="23.0" prefWidth="72.0" text="确认借书" />
+            <Label layoutX="62.0" layoutY="76.0" text="总共：" textFill="#f8f8f8" />
+            <Label fx:id="lb_search_resultNumber" layoutX="101.0" layoutY="76.0" text="0 条记录" textFill="WHITE" />
+            <Label layoutX="84.0" layoutY="294.0" text="借书日期" textFill="#d84315" />
+            <Label layoutX="342.0" layoutY="294.0" text="应还日期" textFill="#d84315" />
+            <Label fx:id="lb_js_reader_jieshu_date" alignment="CENTER" layoutX="155.0" layoutY="294.0" prefHeight="15.0" prefWidth="95.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label fx:id="lb_js_reader_huanshu_date" alignment="CENTER" layoutX="421.0" layoutY="294.0" prefHeight="15.0" prefWidth="92.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+         </AnchorPane>
+      </Tab>
+      <Tab text="个人信息">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="577.0">
+            <children>
+               <Label layoutX="60.0" layoutY="53.0" text="用户ID" textFill="#2196f3">
+                  <font>
+                     <Font name="System Bold Italic" size="15.0" />
+                  </font>
+               </Label>
+               <Label layoutX="71.0" layoutY="98.0" text="姓名" textFill="#03a9f4">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></Label>
+               <Label layoutX="71.0" layoutY="127.0" text="身份" textFill="#03a9f4">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Label>
+               <Label layoutX="71.0" layoutY="159.0" text="性别" textFill="#03a9f4">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Label>
+               <Label layoutX="59.0" layoutY="208.0" text="可借数量" />
+               <Label layoutX="59.0" layoutY="238.0" text="可借天数" />
+               <JFXTextField fx:id="tf_userInfo_readerId" alignment="CENTER" editable="false" focusColor="DEEPSKYBLUE" layoutX="118.0" layoutY="51.0" style="-fx-background-color: #808080;" unFocusColor="#bfbbbb" />
+               <JFXTextField fx:id="tf_userInfo_readerName" alignment="CENTER" editable="false" focusColor="DEEPSKYBLUE" layoutX="118.0" layoutY="94.0" style="-fx-background-color: #F5F5F5;" unFocusColor="#bfbbbb" />
+               <JFXTextField fx:id="tf_userInfo_readerType" alignment="CENTER" editable="false" focusColor="DEEPSKYBLUE" layoutX="118.0" layoutY="123.0" style="-fx-background-color: #F5F5F5;" unFocusColor="#bfbbbb" />
+               <JFXTextField fx:id="tf_userInfo_readerSex" alignment="CENTER" editable="false" focusColor="DEEPSKYBLUE" layoutX="118.0" layoutY="155.0" style="-fx-background-color: #F5F5F5;" unFocusColor="#bfbbbb" />
+               <JFXTextField fx:id="tf_userInfo_readerMaxNumbers" alignment="CENTER" editable="false" focusColor="DEEPSKYBLUE" layoutX="118.0" layoutY="204.0" />
+               <JFXTextField fx:id="tf_userInfo_readerMaxDays" alignment="CENTER" editable="false" focusColor="DEEPSKYBLUE" layoutX="118.0" layoutY="234.0" />
+               <Separator layoutX="294.0" layoutY="51.0" prefHeight="3.0" prefWidth="360.0" />
+               <Label layoutX="449.0" layoutY="27.0" text="借阅记录" textFill="WHITE" />
+               <TableView fx:id="tbv_userInfo_borrowRecord" layoutX="307.0" layoutY="70.0" prefHeight="200.0" prefWidth="332.0">
+                 <columns>
+                   <TableColumn fx:id="tb_column_userInfo_bookId" prefWidth="57.0" text="图书ID" />
+                   <TableColumn fx:id="tb_column_userInfo_bookName" prefWidth="136.0" text="图书名称" />
+                    <TableColumn fx:id="tb_column_userInfo_backDate" prefWidth="75.0" text="到期时间" />
+                    <TableColumn fx:id="tb_column_userInfo_reBorrow" minWidth="0.0" prefWidth="63.0" text="续借" />
+                 </columns>
+               </TableView>
+               <Label layoutX="59.0" layoutY="277.0" text="罚款金额" textFill="#eb0f0f" />
+               <JFXTextField fx:id="tf_userInfo_readerForfeit" alignment="CENTER" editable="false" focusColor="#eb0707" layoutX="118.0" layoutY="273.0" />
+               <JFXButton layoutX="224.0" layoutY="308.0" mnemonicParsing="false" onAction="#jiaokuan" text="提交" />
+               <JFXTextField fx:id="tf_userInfo_jiaoKuan" focusColor="DEEPSKYBLUE" layoutX="118.0" layoutY="308.0" prefHeight="23.0" prefWidth="102.0" />
+            </children></AnchorPane>
+      </Tab>
+   </JFXTabPane>
+   <Label fx:id="lb_welcome" layoutX="39.0" layoutY="72.0" text="xxx ，您好！" textFill="DARKORANGE" />
+   <Hyperlink alignment="CENTER" contentDisplay="CENTER" layoutX="630.0" layoutY="61.0" onAction="#hbrlink_goto_login" prefHeight="21.0" prefWidth="53.0" text="  退出  " textAlignment="CENTER" underline="true" />
+</AnchorPane>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+      <Label layoutX="296.0" layoutY="175.0" text="登录界面" textFill="GOLD">
+         <font>
+            <Font name="System Bold Italic" size="29.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_start" buttonType="RAISED" layoutX="561.0" layoutY="317.0" mnemonicParsing="false" onAction="#onStart" prefHeight="23.0" prefWidth="73.0" text="登录" />
+      <JFXTextField fx:id="tf_user" focusColor="DEEPSKYBLUE" layoutX="383.0" layoutY="267.0" promptText="请输入用户名..." style="-fx-background-color: #808080;" />
+      <Label layoutX="329.0" layoutY="271.0" text="用户名" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="330.0" layoutY="318.0" text="密  码" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <JFXPasswordField fx:id="tf_passWord" focusColor="DEEPSKYBLUE" layoutX="383.0" layoutY="317.0" promptText="请输入密码..." style="-fx-background-color: #808080;" />
+      <JFXProgressBar fx:id="prgs_login" layoutY="460.0" prefHeight="10.0" prefWidth="722.0" progress="0.0" />
+      <Label layoutX="77.0" layoutY="120.0" prefHeight="55.0" prefWidth="219.0" text="图书管理系统" textFill="DEEPSKYBLUE">
+         <font>
+            <Font name="System Bold Italic" size="33.0" />
+         </font>
+      </Label>
+      <JFXCheckBox fx:id="rememberInfo" layoutX="561.0" layoutY="272.0" mnemonicParsing="false" selected="true" text="记住密码" textFill="WHITE" />
+      <Separator layoutX="322.0" layoutY="363.0" prefHeight="4.0" prefWidth="344.0" />
+      <Hyperlink layoutX="564.0" layoutY="374.0" onAction="#forgotPass" prefHeight="21.0" prefWidth="80.0" text=" 忘记密码 ？" textFill="WHITE" />
+      <JFXRadioButton fx:id="rb_duzhe" layoutX="383.0" layoutY="239.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="66.0" text="读者" textFill="#00e5ff">
+         <toggleGroup>
+            <ToggleGroup fx:id="identity" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="rb_gzry" layoutX="457.0" layoutY="239.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="66.0" text="工作人员" textFill="#00e5ff" toggleGroup="$identity" />
+    </children>
+</AnchorPane>
