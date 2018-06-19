@@ -10,9 +10,10 @@ public class Reader {
     private int days_num;
     private double forfeit;
 
-    public Reader(String id, String name, String type, String sex, int max_num, int days_num, double forfeit) {
+    public Reader(String id, String name,String password, String type, String sex, int max_num, int days_num, double forfeit) {
         this.id = id;
         this.name = name;
+        this.password = password;
         this.type = type;
         this.sex = sex;
         this.max_num = max_num;

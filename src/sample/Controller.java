@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -170,6 +171,9 @@ public class Controller implements Initializable {
         myApp.hideWindow();
         Stage myStage=new Stage();
         myStage.setResizable(false);
+        //设置窗口的图标.
+        myStage.getIcons().add(new Image(
+                Main.class.getResourceAsStream("logo.png")));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("forgotPass.fxml"));
         Parent root = null;
         try {
@@ -181,11 +185,36 @@ public class Controller implements Initializable {
         con.setMyApp(myApp);
         con.setController(myStage);
         myStage.setTitle("忘记密码");
-        Scene scene = new Scene(root, 500, 400);
+        Scene scene = new Scene(root, 475, 400);
         scene.getStylesheets().add(Main.class.getResource("main.css").toExternalForm());
         myStage.setScene(scene);
         myStage.show();
 
+    }
+
+    @FXML
+    public void logUp() {
+        myApp.hideWindow();
+        Stage myLogupStage=new Stage();
+        myLogupStage.setResizable(false);
+        //设置窗口的图标.
+        myLogupStage.getIcons().add(new Image(
+                Main.class.getResourceAsStream("logo.png")));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("user_logUp.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        UserLogUp con = loader.getController();
+        con.setMyApp(myApp);
+        con.setController(myLogupStage);
+        myLogupStage.setTitle("注册");
+        Scene scene = new Scene(root, 475, 400);
+        scene.getStylesheets().add(Main.class.getResource("main.css").toExternalForm());
+        myLogupStage.setScene(scene);
+        myLogupStage.show();
     }
 
 
@@ -217,6 +246,8 @@ public class Controller implements Initializable {
             }
         }
     }
+
+
 
 
 }

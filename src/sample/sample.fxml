@@ -46,5 +46,6 @@
          </toggleGroup>
       </JFXRadioButton>
       <JFXRadioButton fx:id="rb_gzry" layoutX="457.0" layoutY="239.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="66.0" text="工作人员" textFill="#00e5ff" toggleGroup="$identity" />
+      <Hyperlink layoutX="543.0" layoutY="395.0" onAction="#logUp" text="没有账号？点击注册" textFill="WHITE" />
     </children>
 </AnchorPane>

@@ -719,4 +719,67 @@ public class DataBaseUtil {
         }
         return "";
     }
+
+    public static boolean alterUserPass(String email, String newPass) {
+        try {
+            Connection con = null; //定义一个MYSQL链接对象
+            Class.forName("com.mysql.jdbc.Driver").newInstance();//MYSQL驱动
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/tushuguanli_database_test", "root", "root"); //链接本地MYSQL
+            Statement stmt; //创建声明
+            stmt = con.createStatement();
+
+            String updateSql = "update user set pass='" + newPass + "' where email= '" + email + "'";
+            System.out.println(updateSql);
+            int selectRes = stmt.executeUpdate(updateSql);
+            if (selectRes != 0) {
+                return true;
+            }
+            con.close();
+        } catch (Exception e) {
+            System.out.print("alterUserPass检查----alterUserPass----MYSQL ERROR:" + e.getMessage());
+        }
+        return false;
+    }
+
+    public static boolean alterReaderPass(String email, String newPass) {
+        try {
+            Connection con = null; //定义一个MYSQL链接对象
+            Class.forName("com.mysql.jdbc.Driver").newInstance();//MYSQL驱动
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/tushuguanli_database_test", "root", "root"); //链接本地MYSQL
+            Statement stmt; //创建声明
+            stmt = con.createStatement();
+
+            String updateSql = "update reader set pass='" + newPass + "' where email= '" + email + "'";
+            System.out.println(updateSql);
+            int selectRes = stmt.executeUpdate(updateSql);
+            if (selectRes != 0) {
+                return true;
+            }
+            con.close();
+        } catch (Exception e) {
+            System.out.print("alterReaderPass检查----alterReaderPass----MYSQL ERROR:" + e.getMessage());
+        }
+        return false;
+    }
+
+    public static boolean addNewUser(User user) {
+        try {
+            Connection con = null; //定义一个MYSQL链接对象
+            Class.forName("com.mysql.jdbc.Driver").newInstance();//MYSQL驱动
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/tushuguanli_database_test", "root", "root"); //链接本地MYSQL
+            Statement stmt; //创建声明
+            stmt = con.createStatement();
+
+            String updateSql = "insert into user (Id,name,pass,email,is_admin) values ('" + user.getId() + "','" + user.getName() + "','" + user.getPassWord() + "','"+ user.getEmail()+"','" + user.getIsAdmin()+"')";
+            System.out.println(updateSql);
+            int selectRes = stmt.executeUpdate(updateSql);
+            if (selectRes != 0) {
+                return true;
+            }
+            con.close();
+        } catch (Exception e) {
+            System.out.print("addNewUser检查----addNewUser----MYSQL ERROR:" + e.getMessage());
+        }
+        return false;
+    }
 }

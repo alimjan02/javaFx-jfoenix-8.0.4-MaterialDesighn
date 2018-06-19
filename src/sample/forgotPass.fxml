@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ForgotPass">
+<AnchorPane prefHeight="400.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ForgotPass">
    <children>
-      <JFXTextField focusColor="DEEPSKYBLUE" layoutX="177.0" layoutY="117.0" style="-fx-background-color: #808080;" />
-      <JFXTextField focusColor="DEEPSKYBLUE" layoutX="177.0" layoutY="167.0" style="-fx-background-color: #808080;" />
-      <JFXButton fx:id="btn_confirm" layoutX="177.0" layoutY="232.0" mnemonicParsing="false" onAction="#confirm" prefHeight="23.0" prefWidth="147.0" text="确定" />
+      <JFXTextField fx:id="tf_frg_email" focusColor="DEEPSKYBLUE" layoutX="177.0" layoutY="117.0" style="-fx-background-color: #808080;" />
+      <JFXTextField fx:id="tf_frg_newPass" focusColor="DEEPSKYBLUE" layoutX="177.0" layoutY="167.0" style="-fx-background-color: #808080;" />
+      <JFXButton fx:id="btn_confirm" layoutX="176.0" layoutY="268.0" mnemonicParsing="false" onAction="#confirm" prefHeight="23.0" prefWidth="147.0" text="确定" />
       <Label layoutX="203.0" layoutY="54.0" text="修改密码" textFill="GOLD">
          <font>
             <Font name="System Bold Italic" size="23.0" />
@@ -24,5 +28,14 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
+      <Separator layoutX="127.0" layoutY="224.0" prefWidth="200.0" />
+      <Hyperlink fx:id="hbl_logup" layoutX="191.0" layoutY="233.0" onAction="#logUp" text="没有账号？点击注册" textFill="WHITE" />
+      <JFXRadioButton fx:id="rdb_reader" layoutX="178.0" layoutY="91.0" mnemonicParsing="false" selected="true" text="读者" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="user_type" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="rdb_user" layoutX="260.0" layoutY="91.0" mnemonicParsing="false" text="管理员" textFill="WHITE" toggleGroup="$user_type" />
+      <Hyperlink fx:id="hbr_goBackLogin" layoutX="381.0" layoutY="344.0" onAction="#goBackLogin" text="返回登录界面" textFill="WHITE" />
    </children>
 </AnchorPane>
